@@ -19,7 +19,7 @@ export default {
   /*
    ** Customize the progress-bar color
    */
-  loading: { color: '#fff' },
+  loading: { color: '#2367A7' },
   /*
    ** Global CSS
    */
@@ -48,21 +48,18 @@ export default {
   */
 
   apollo: {
-    // includeNodeModules: true, // optional, default: false (this includes graphql-tag for node_modules folder)
-    authenticationType: 'Bearer', // optional, default: 'Bearer'
     defaultOptions: {
+      // See 'apollo' definition
+      // For example: default query options
       $query: {
         loadingKey: 'loading',
         fetchPolicy: 'cache-and-network'
       }
     },
-    // optional
     errorHandler: '~/plugins/apollo-error-handler.js',
-    // required
+
     clientConfigs: {
-      default: {
-        httpEndpoint: 'http://localhost:4000'
-      }
+      default: '~/apollo/client-configs/default.js'
     }
   },
   /*
