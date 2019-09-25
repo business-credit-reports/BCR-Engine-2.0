@@ -13,7 +13,11 @@
     "test": "jest"
   },
   "dependencies": {
-    "nuxt": "^2.0.0"
+    "@nuxtjs/apollo": "^4.0.0-rc13.1",
+    "nuxt": "^2.0.0",
+    "vue": "^2.6.6",
+    "vue-server-renderer": "^2.6.6",
+    "vue-template-compiler": "^2.6.6"
   },
   "devDependencies": {
     "@nuxtjs/tailwindcss": "^1.0.0",
