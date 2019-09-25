@@ -40,7 +40,31 @@ export default {
   /*
    ** Nuxt.js modules
    */
-  modules: [],
+  modules: ['@nuxtjs/apollo'],
+
+  /*
+  ** Give apollo module options
+  https://github.com/nuxt-community/apollo-module#setup
+  */
+
+  apollo: {
+    // includeNodeModules: true, // optional, default: false (this includes graphql-tag for node_modules folder)
+    authenticationType: 'Bearer', // optional, default: 'Bearer'
+    defaultOptions: {
+      $query: {
+        loadingKey: 'loading',
+        fetchPolicy: 'cache-and-network'
+      }
+    },
+    // optional
+    errorHandler: '~/plugins/apollo-error-handler.js',
+    // required
+    clientConfigs: {
+      default: {
+        httpEndpoint: 'http://localhost:4000'
+      }
+    }
+  },
   /*
    ** Build configuration
    */
