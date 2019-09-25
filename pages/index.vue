@@ -1,9 +1,11 @@
 <template>
 	<div>
-		Inner Content
+		Welcome
 	</div>
 </template>
 
 <script>
-export default {}
+export default {
+	layout: 'dash'
+}
 </script>
