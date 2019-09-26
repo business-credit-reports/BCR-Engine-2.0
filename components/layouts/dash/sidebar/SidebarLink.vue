@@ -1,7 +1,7 @@
 <template>
   <li>
     <nuxt-link
-      class="sidebar__link px-4 block w-full text-white border-l-4 border-transparent hover:pl-5"
+      class="sidebar__link px-4 block w-full text-white border-l-4 border-transparent hover:pl-5 no-underline"
       :to="destination"
     >
       <slot />
