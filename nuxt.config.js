@@ -19,7 +19,7 @@ export default {
   /*
    ** Customize the progress-bar color
    */
-  loading: { color: '#fff' },
+  loading: { color: '#2367A7' },
   /*
    ** Global CSS
    */
@@ -40,7 +40,28 @@ export default {
   /*
    ** Nuxt.js modules
    */
-  modules: [],
+  modules: ['@nuxtjs/apollo'],
+
+  /*
+  ** Give apollo module options
+  https://github.com/nuxt-community/apollo-module#setup
+  */
+
+  apollo: {
+    defaultOptions: {
+      // See 'apollo' definition
+      // For example: default query options
+      $query: {
+        loadingKey: 'loading',
+        fetchPolicy: 'cache-and-network'
+      }
+    },
+    errorHandler: '~/plugins/apollo-error-handler.js',
+
+    clientConfigs: {
+      default: '~/apollo/client-configs/default.js'
+    }
+  },
   /*
    ** Build configuration
    */
