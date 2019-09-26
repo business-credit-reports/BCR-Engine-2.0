@@ -10,7 +10,7 @@
 
 <script>
 import NavBar from '../components/layouts/dash/NavBar'
-import Sidebar from '../components/layouts/dash/Sidebar'
+import Sidebar from '../components/layouts/dash/sidebar/Sidebar'
 import Content from '../components/layouts/dash/Content'
 
 export default {

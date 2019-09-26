@@ -1,10 +1,12 @@
 <template>
-  <nuxt-link
-    class="sidebar__link text-white border-l-4 border-transparent px-5 mb-2 hover:pl-6"
-    :to="destination"
-  >
-    <slot />
-  </nuxt-link>
+  <li>
+    <nuxt-link
+      class="sidebar__link px-4 block w-full text-white border-l-4 border-transparent hover:pl-5"
+      :to="destination"
+    >
+      <slot />
+    </nuxt-link>
+  </li>
 </template>
 
 <script>

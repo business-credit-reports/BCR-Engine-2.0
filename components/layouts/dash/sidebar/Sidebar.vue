@@ -1,6 +1,6 @@
 <template>
   <div class="sidebar bg-blue-600 shadow z-10">
-    <div class="flex justify-between py-3 px-6">
+    <div class="flex justify-between py-3 px-5">
       <Logo v-if="menuOpen" class="h-12 pr-6" />
       <MenuIcon :open="menuOpen" class="py-3" @click.native="toggleMenu" />
     </div>
@@ -9,8 +9,8 @@
 </template>
 
 <script>
-import Logo from '../../Logo'
-import MenuIcon from '../../icons/MenuIcon'
+import Logo from '../../../Logo'
+import MenuIcon from '../../../icons/MenuIcon'
 import SidebarLinkList from './SidebarLinkList'
 
 export default {
