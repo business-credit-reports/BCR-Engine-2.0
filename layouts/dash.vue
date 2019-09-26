@@ -1,11 +1,11 @@
 <template>
-	<div class="dash__grid min-h-screen">
-		<NavBar />
-		<Sidebar />
-		<Content>
-			<nuxt />
-		</Content>
-	</div>
+  <div class="dash__grid min-h-screen">
+    <NavBar />
+    <Sidebar />
+    <Content>
+      <nuxt />
+    </Content>
+  </div>
 </template>
 
 <script>
@@ -14,17 +14,17 @@ import Sidebar from '../components/layouts/dash/Sidebar'
 import Content from '../components/layouts/dash/Content'
 
 export default {
-	components: {
-		NavBar,
-		Sidebar,
-		Content
-	}
+  components: {
+    NavBar,
+    Sidebar,
+    Content
+  }
 }
 </script>
 
 <style>
 .dash__grid {
-	display: grid;
-	grid: 70px 1fr / auto repeat(11, 1fr);
+  display: grid;
+  grid: 70px 1fr / auto repeat(11, 1fr);
 }
 </style>

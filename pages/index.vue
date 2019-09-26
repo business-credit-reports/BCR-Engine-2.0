@@ -1,11 +1,11 @@
 <template>
-	<div>
-		Welcome
-	</div>
+  <div>
+    Welcome
+  </div>
 </template>
 
 <script>
 export default {
-	layout: 'dash'
+  layout: 'dash'
 }
 </script>
