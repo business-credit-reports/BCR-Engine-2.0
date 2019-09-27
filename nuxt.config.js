@@ -53,7 +53,7 @@ export default {
       // For example: default query options
       $query: {
         loadingKey: 'loading',
-        fetchPolicy: 'cache-and-network'
+        fetchPolicy: 'cache-first'
       }
     },
     errorHandler: '~/plugins/apollo-error-handler.js',

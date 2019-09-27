@@ -38,13 +38,13 @@ export default {
             {
               id: 2,
               name: 'Chat',
-              destination: '/chat',
+              destination: '/',
               links: []
             },
             {
               id: 3,
               name: 'Calendar',
-              destination: '/calendar',
+              destination: '/dashboard',
               links: []
             }
           ]
@@ -67,8 +67,8 @@ export default {
             },
             {
               id: 2,
-              name: 'Chat',
-              destination: '/chat',
+              name: 'Experian',
+              destination: '/experian',
               links: []
             },
             {
