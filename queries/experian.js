@@ -15,6 +15,7 @@ export default gql`
         subcode: $subcode
       }
     ) {
+      experianBIN
       companyName
       city
       state
