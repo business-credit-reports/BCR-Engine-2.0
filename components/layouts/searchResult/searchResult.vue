@@ -14,6 +14,11 @@
 <script>
 export default {
   name: 'SearchResult',
-  props: ['result']
+  props: {
+    result: {
+      type: Object,
+      default: () => {}
+    }
+  }
 }
 </script>
