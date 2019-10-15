@@ -1,0 +1,9 @@
+{
+	"auth": {
+		"bcrengine20a65c0776": {
+			"service": "Cognito",
+			"providerPlugin": "awscloudformation",
+			"dependsOn": []
+		}
+	}
+}
