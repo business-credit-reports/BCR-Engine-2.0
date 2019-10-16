@@ -16,8 +16,8 @@
 
 <script>
 import { Auth } from 'aws-amplify'
-import Logo from '../../Logo'
-import MenuIcon from '../../icons/MenuIcon'
+import Logo from '../../../Logo'
+import MenuIcon from '../../../icons/MenuIcon'
 import SidebarLinkList from './SidebarLinkList'
 
 export default {
