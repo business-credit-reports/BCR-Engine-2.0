@@ -1,5 +1,5 @@
 <template>
-  <div class="dash__grid min-h-screen">
+  <div class="dash__grid min-h-screen bg-blue-100">
     <NavBar />
     <Sidebar />
     <Content>
