@@ -33,12 +33,21 @@
       </div>
       <div class="mb-12">
         <label class="text-black font-medium mb-2 block">New Password</label>
-        <input
-          v-model="newPassword"
-          class="border border-gray-100 rounded-lg w-full p-3 leading-tight"
-          placeholder="Enter new password"
-          type="password"
-        />
+        <div class="inline-block relative w-full">
+          <input
+            v-model="newPassword"
+            class="border border-gray-100 rounded-lg w-full p-3 leading-tight"
+            placeholder="Enter new password"
+            :type="inputType"
+          />
+          <a
+            href="#"
+            class="absolute inset-y-0 right-0 flex items-center px-4 text-gray-200"
+            @click.prevent="togglePassword"
+          >
+            {{ passwordToggleText }}
+          </a>
+        </div>
       </div>
       <button
         class="w-full bg-blue-600 text-white py-3 rounded-lg mb-4"
@@ -61,7 +70,9 @@ export default {
   data() {
     return {
       newPassword: '',
-      code: ''
+      code: '',
+      inputType: 'password',
+      passwordToggleText: 'Show'
     }
   },
   computed: {
@@ -82,6 +93,15 @@ export default {
           this.$router.push({ path: '/signin' })
         })
         .catch((err) => console.log(err))
+    },
+    togglePassword() {
+      if (this.inputType === 'password') {
+        this.inputType = 'text'
+        this.passwordToggleText = 'Hide'
+      } else {
+        this.inputType = 'password'
+        this.passwordToggleText = 'Show'
+      }
     }
   }
 }

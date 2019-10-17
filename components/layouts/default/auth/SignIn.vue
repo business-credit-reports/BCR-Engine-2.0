@@ -22,12 +22,21 @@
       </div>
       <div>
         <label class="block text-black font-medium mb-2">Password</label>
-        <input
-          v-model="password"
-          class="border border-gray-100 rounded-lg w-full p-3 leading-tight"
-          placeholder="Enter password"
-          type="password"
-        />
+        <div class="inline-block relative w-full">
+          <input
+            v-model="password"
+            class="border border-gray-100 rounded-lg w-full p-3 leading-tight"
+            placeholder="Enter password"
+            :type="inputType"
+          />
+          <a
+            href="#"
+            class="absolute inset-y-0 right-0 flex items-center px-4 text-gray-200"
+            @click.prevent="togglePassword"
+          >
+            {{ passwordToggleText }}
+          </a>
+        </div>
       </div>
       <div class="mb-12 flex justify-end">
         <router-link class="text-blue-600" to="/password-reset"
@@ -60,7 +69,10 @@ export default {
   },
   data() {
     return {
-      password: ''
+      password: '',
+      error: '',
+      inputType: 'password',
+      passwordToggleText: 'Show'
     }
   },
   computed: {
@@ -81,6 +93,15 @@ export default {
           console.log(`Signed in under ${this.email}.`)
         })
         .catch((err) => console.log(err))
+    },
+    togglePassword() {
+      if (this.inputType === 'password') {
+        this.inputType = 'text'
+        this.passwordToggleText = 'Hide'
+      } else {
+        this.inputType = 'password'
+        this.passwordToggleText = 'Show'
+      }
     }
   }
 }
