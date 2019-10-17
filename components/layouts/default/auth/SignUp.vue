@@ -41,7 +41,7 @@
         </button>
         <p class="text-center text-gray-200">
           Already have an account?
-          <router-link class="text-blue-600" to="/signin">Login</router-link>
+          <router-link class="text-blue-600" to="/signin">Sign in</router-link>
         </p>
       </form>
     </div>
@@ -66,18 +66,19 @@
         <button
           class="w-full bg-blue-600 text-white py-3 rounded-lg mb-4"
           type="button"
-          @click="confirmEmail"
+          @click.prevent="confirmEmail"
         >
           Confirm Email
         </button>
         <p class="text-center text-gray-200">
           Didn't get the confirmation email?
-          <button
+          <a
+            href="#"
             class="text-blue-600"
             @click.prevent="resendConfirmationEmail"
           >
             Resend it
-          </button>
+          </a>
         </p>
       </form>
     </div>
@@ -86,7 +87,7 @@
 
 <script>
 import { Auth } from 'aws-amplify'
-import Logo from '../../../Logo'
+import Logo from '~/components/Logo'
 
 export default {
   components: {

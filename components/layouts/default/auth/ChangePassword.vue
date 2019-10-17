@@ -7,9 +7,11 @@
       textColor="#2F5275"
     />
     <h2 class="text-blue-800 text-2xl font-bold text-center">
-      Welcome to the BCR App Engine
+      Reset your password
     </h2>
-    <p class="text-gray-200 mb-12 text-center">Sign in to continue</p>
+    <p class="text-gray-200 mb-12 text-center">
+      Enter your password reset code and change your password
+    </p>
     <form>
       <div class="mb-6">
         <label class="text-black font-medium mb-2 block">Email</label>
@@ -20,32 +22,30 @@
           type="email"
         />
       </div>
-      <div>
-        <label class="block text-black font-medium mb-2">Password</label>
+      <div class="mb-6">
+        <label class="text-black font-medium mb-2 block">Code</label>
         <input
-          v-model="password"
+          v-model="code"
           class="border border-gray-100 rounded-lg w-full p-3 leading-tight"
-          placeholder="Enter password"
+          placeholder="Enter password reset code"
+          type="text"
+        />
+      </div>
+      <div class="mb-12">
+        <label class="text-black font-medium mb-2 block">New Password</label>
+        <input
+          v-model="newPassword"
+          class="border border-gray-100 rounded-lg w-full p-3 leading-tight"
+          placeholder="Enter new password"
           type="password"
         />
       </div>
-      <div class="mb-12 flex justify-end">
-        <router-link class="text-blue-600" to="/password-reset"
-          >Forgot password?</router-link
-        >
-      </div>
       <button
         class="w-full bg-blue-600 text-white py-3 rounded-lg mb-4"
-        @click.prevent="signIn"
+        @click.prevent="changePassword"
       >
-        Sign In
+        Change Password
       </button>
-      <p class="text-center text-gray-200">
-        Don't have an account?
-        <router-link class="text-blue-600" to="/signup"
-          >Create an account</router-link
-        >
-      </p>
     </form>
   </div>
 </template>
@@ -61,15 +61,16 @@ export default {
   data() {
     return {
       email: '',
-      password: ''
+      newPassword: '',
+      code: ''
     }
   },
   methods: {
-    signIn() {
-      Auth.signIn(this.email, this.password)
-        .then((user) => {
-          this.$router.push({ path: '/' })
-          console.log(`Signed in under ${this.email}.`)
+    changePassword() {
+      Auth.forgotPasswordSubmit(this.email, this.code, this.newPassword)
+        .then((data) => {
+          console.log(`Password has been reset to ${this.newPassword}.`)
+          this.$router.push({ path: '/signin' })
         })
         .catch((err) => console.log(err))
     }

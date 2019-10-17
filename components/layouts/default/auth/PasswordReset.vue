@@ -7,11 +7,13 @@
       textColor="#2F5275"
     />
     <h2 class="text-blue-800 text-2xl font-bold text-center">
-      Welcome to the BCR App Engine
+      Forgot your password?
     </h2>
-    <p class="text-gray-200 mb-12 text-center">Sign in to continue</p>
+    <p class="text-gray-200 mb-12 text-center">
+      Send a password reset code to your email to continue
+    </p>
     <form>
-      <div class="mb-6">
+      <div class="mb-12">
         <label class="text-black font-medium mb-2 block">Email</label>
         <input
           v-model="email"
@@ -20,30 +22,16 @@
           type="email"
         />
       </div>
-      <div>
-        <label class="block text-black font-medium mb-2">Password</label>
-        <input
-          v-model="password"
-          class="border border-gray-100 rounded-lg w-full p-3 leading-tight"
-          placeholder="Enter password"
-          type="password"
-        />
-      </div>
-      <div class="mb-12 flex justify-end">
-        <router-link class="text-blue-600" to="/password-reset"
-          >Forgot password?</router-link
-        >
-      </div>
       <button
         class="w-full bg-blue-600 text-white py-3 rounded-lg mb-4"
-        @click.prevent="signIn"
+        @click.prevent="sendPasswordResetCode"
       >
-        Sign In
+        Send Password Reset Code
       </button>
       <p class="text-center text-gray-200">
-        Don't have an account?
-        <router-link class="text-blue-600" to="/signup"
-          >Create an account</router-link
+        Remember your current password?
+        <router-link class="text-blue-600" to="/signin"
+          >Go back to sign in</router-link
         >
       </p>
     </form>
@@ -60,16 +48,15 @@ export default {
   },
   data() {
     return {
-      email: '',
-      password: ''
+      email: ''
     }
   },
   methods: {
-    signIn() {
-      Auth.signIn(this.email, this.password)
-        .then((user) => {
-          this.$router.push({ path: '/' })
-          console.log(`Signed in under ${this.email}.`)
+    sendPasswordResetCode() {
+      Auth.forgotPassword(this.email)
+        .then((data) => {
+          console.log(`Sending password reset code to ${this.email}...`)
+          this.$router.push({ path: '/change-password' })
         })
         .catch((err) => console.log(err))
     }
