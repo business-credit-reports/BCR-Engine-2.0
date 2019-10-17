@@ -46,9 +46,14 @@ export default {
   components: {
     Logo
   },
-  data() {
-    return {
-      email: ''
+  computed: {
+    email: {
+      get() {
+        return this.$store.state.auth.email
+      },
+      set(value) {
+        this.$store.commit('auth/updateEmail', value)
+      }
     }
   },
   methods: {

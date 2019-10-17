@@ -60,9 +60,18 @@ export default {
   },
   data() {
     return {
-      email: '',
       newPassword: '',
       code: ''
+    }
+  },
+  computed: {
+    email: {
+      get() {
+        return this.$store.state.auth.email
+      },
+      set(value) {
+        this.$store.commit('auth/updateEmail', value)
+      }
     }
   },
   methods: {
