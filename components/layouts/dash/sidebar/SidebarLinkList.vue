@@ -6,10 +6,19 @@
       class="mb-4"
       :section="section"
     />
+    <li>
+      <button
+        class="sidebar__link text-white border-l-4 border-transparent px-5 mb-2 hover:pl-6"
+        @click="signOut"
+      >
+        Signout
+      </button>
+    </li>
   </ul>
 </template>
 
 <script>
+import { Auth } from 'aws-amplify'
 import SidebarLinkSection from './SidebarLinkSection'
 
 export default {
@@ -80,6 +89,12 @@ export default {
           ]
         }
       ]
+    }
+  },
+  methods: {
+    signOut() {
+      Auth.signOut()
+      this.$router.push({ path: '/signin' })
     }
   }
 }
