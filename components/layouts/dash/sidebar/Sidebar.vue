@@ -9,9 +9,9 @@
 </template>
 
 <script>
-import Logo from '../../../Logo'
-import MenuIcon from '../../../icons/MenuIcon'
 import SidebarLinkList from './SidebarLinkList'
+import MenuIcon from '~/components/icons/MenuIcon'
+import Logo from '~/components/Logo'
 
 export default {
   components: {
