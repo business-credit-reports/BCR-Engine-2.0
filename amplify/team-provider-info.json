@@ -1,18 +1,18 @@
 {
     "dev": {
         "awscloudformation": {
-            "AuthRoleName": "bcr-engine-20-dev-20191016143132-authRole",
-            "UnauthRoleArn": "arn:aws:iam::812795325447:role/bcr-engine-20-dev-20191016143132-unauthRole",
-            "AuthRoleArn": "arn:aws:iam::812795325447:role/bcr-engine-20-dev-20191016143132-authRole",
+            "AuthRoleName": "bcr-engine-20-dev-20191022150809-authRole",
+            "UnauthRoleArn": "arn:aws:iam::812795325447:role/bcr-engine-20-dev-20191022150809-unauthRole",
+            "AuthRoleArn": "arn:aws:iam::812795325447:role/bcr-engine-20-dev-20191022150809-authRole",
             "Region": "us-east-2",
-            "DeploymentBucketName": "bcr-engine-20-dev-20191016143132-deployment",
-            "UnauthRoleName": "bcr-engine-20-dev-20191016143132-unauthRole",
-            "StackName": "bcr-engine-20-dev-20191016143132",
-            "StackId": "arn:aws:cloudformation:us-east-2:812795325447:stack/bcr-engine-20-dev-20191016143132/8d71a700-f04b-11e9-b031-06faea3c34dc"
+            "DeploymentBucketName": "bcr-engine-20-dev-20191022150809-deployment",
+            "UnauthRoleName": "bcr-engine-20-dev-20191022150809-unauthRole",
+            "StackName": "bcr-engine-20-dev-20191022150809",
+            "StackId": "arn:aws:cloudformation:us-east-2:812795325447:stack/bcr-engine-20-dev-20191022150809/a4d24290-f507-11e9-be93-066dd16eed5a"
         },
         "categories": {
             "auth": {
-                "bcrengine20a2088cc1": {}
+                "bcrengine2099ecead0": {}
             }
         }
     }

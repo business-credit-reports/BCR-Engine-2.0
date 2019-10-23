@@ -1,8 +1,8 @@
 {
-    "identityPoolName": "bcrengine20a2088cc1_identitypool_a2088cc1",
+    "identityPoolName": "bcrengine2099ecead0_identitypool_99ecead0",
     "allowUnauthenticatedIdentities": false,
-    "resourceNameTruncated": "bcrenga2088cc1",
-    "userPoolName": "bcrengine20a2088cc1_userpool_a2088cc1",
+    "resourceNameTruncated": "bcreng99ecead0",
+    "userPoolName": "bcrengine2099ecead0_userpool_99ecead0",
     "autoVerifiedAttributes": [
         "email"
     ],
@@ -28,9 +28,9 @@
     "userpoolClientReadAttributes": [
         "email"
     ],
-    "userpoolClientLambdaRole": "bcrenga2088cc1_userpoolclient_lambda_role",
+    "userpoolClientLambdaRole": "bcreng99ecead0_userpoolclient_lambda_role",
     "userpoolClientSetAttributes": false,
-    "resourceName": "bcrengine20a2088cc1",
+    "resourceName": "bcrengine2099ecead0",
     "authSelections": "identityPoolAndUserPool",
     "authRoleArn": {
         "Fn::GetAtt": [
